@@ -115,8 +115,8 @@ function clickNumUp() {
 }
 
 //匹配同步
-// var ws = new WebSocket("ws://47.94.0.90:2555");
-var ws = new WebSocket("ws://47.94.0.90:2555");
+var ws = new WebSocket("ws://182.61.1.27:2555");
+//var ws = new WebSocket("ws://127.0.0.1:2555");
 //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
 /*window.onblur = function () {
     ws.close();
@@ -282,9 +282,10 @@ ws.onmessage = function(e){
     if(_type == 2){
         if(_data.troops == 0){
             $('.over-player1 .playUid').text(_data.uid);
-            $('.over-player1').find('img').attr('src','http://doudoujiaoyou.oss-cn-beijing.aliyuncs.com/PlayerIcon/' + _data.pic + '.png');
+            // $('.over-player1').find('img').attr('src','http://doudoujiaoyou.oss-cn-beijing.aliyuncs.com/PlayerIcon/' + _data.pic + '.png');
+            $('.over-player1').find('img').attr('src',_data.avatar);
             $('.player-red .playerName').text(_data.name);
-            $('.player-red').find('img').attr('src','http://doudoujiaoyou.oss-cn-beijing.aliyuncs.com/PlayerIcon/' + _data.pic + '.png');
+            $('.player-red').find('img').attr('src',_data.avatar);
             if (_data.sex == 0) {
                 $('.player-red .playerName').css('color','#00c1f0');
             }else{
@@ -292,9 +293,11 @@ ws.onmessage = function(e){
             }
         }else{
             $('.over-player2 .playUid').text(_data.uid);
-            $('.over-player2').find('img').attr('src','http://doudoujiaoyou.oss-cn-beijing.aliyuncs.com/PlayerIcon/' + _data.pic + '.png');
+            //$('.over-player2').find('img').attr('src','http://doudoujiaoyou.oss-cn-beijing.aliyuncs.com/PlayerIcon/' + _data.pic + '.png');
+            $('.over-player2').find('img').attr('src',_data.avatar);
             $('.player-blue .playerName').text(_data.name);
-            $('.player-blue').find('img').attr('src','http://doudoujiaoyou.oss-cn-beijing.aliyuncs.com/PlayerIcon/' + _data.pic + '.png');
+            //$('.player-blue').find('img').attr('src','http://doudoujiaoyou.oss-cn-beijing.aliyuncs.com/PlayerIcon/' + _data.pic + '.png');
+            $('.player-blue').find('img').attr('src',_data.avatar);
             if (_data.sex == 0) {
                 $('.player-blue .playerName').css('color','#00c1f0');
             }else{
