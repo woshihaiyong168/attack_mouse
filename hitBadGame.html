@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <!--<script src="../common/rem-count.js"></script>-->
+    <link rel="stylesheet" href="./hitBadGame.css">
+    <title>汉奸必须死</title>
+</head>
+<body>
+<!--游戏开始页面-->
+    <div class="gameStart">
+        <div class="startBtn">
+            <img src="./hitBadGame/startBtn.png" />
+        </div>
+    </div>
+<!--游戏匹配中蒙版-->
+    <div class="gameMark">
+        <div class="matching">
+            <img src="./hitBadGame/matching.png" />
+            <img src="./hitBadGame/dian2.gif" />
+        </div>
+        <div class="closeMatch">
+            <img src="./hitBadGame/closematch.png" />
+        </div>
+    </div>
+<!--游戏胜利页面-->
+    <div class="game-winAndfall">
+        <div class="winORfall">
+            <img class="winOrfall" src="./hitBadGame/win.png" />
+        </div>
+        <div class="gameOverMark">
+            <div class="over-player1 blinkBtn">
+                <img src="./hitBadGame/girl.png">
+                <p><span>0</span>分</p>
+                <h6 class="playUid"></h6>
+            </div>
+            <div class="over-player2 blinkBtn">
+                <img src="./hitBadGame/girl.png">
+                <p><span>0</span>分</p>
+                <h6 class="playUid"></h6>
+            </div>
+            <!--<h5>获得奖励</h5>-->
+            <div class="over-award">
+                <h5>获得奖励</h5>
+                <span><img src="./hitBadGame/badge.png" /><span>x3</span></span>
+            </div>
+        </div>
+        <div class="over-btn">
+            <img src="./hitBadGame/closeGame.png" />
+            <!--<img src="./hitBadGame/share.png" />-->
+        </div>
+        <!--<div class="close-btn">
+            <img src="./hitBadGame/closeGame.png" />
+        </div>-->
+    </div>
+</div>
+<!--进度条-->
+<div class="pointPlan">
+    <div class="plan-box">
+        <div class="planimg"><img class="in-plan" src="./hitBadGame/planimg.png"></div>
+    </div>
+    <img class="starBlink" src="./hitBadGame/star.png">
+</div>
+<!--连击点显示-->
+<div class="linkPoint">
+    <span>0</span>
+    <img src="./hitBadGame/linkPoint.png" />
+</div>
+<!--boss出现部分-->
+<div class="boss-box">
+    <!--<i>+300</i>-->
+    <div class="bossPit">
+        <img class="boss" src="./hitBadGame/boss.png" />
+    </div>
+    <!--<img class="clickText" src="./hitBadGame/clickText.png">-->
+    <div class="boss-hit">
+        <img src="./hitBadGame/max-hit.png">
+        <img src="./hitBadGame/Duang.png">
+    </div>
+</div>
+<!--倒计时-->
+    <div class="timeMark">
+        <img src="./hitBadGame/1.png" />
+    </div>
+<!--鬼子图片-->
+<div class="box">
+    <!--游戏关闭按钮-->
+    <!--<div class="close">
+        <img src="hitBadGame/closeBtn.png" />
+    </div>-->
+    <div class="bad">
+        <div><span>-100</span><img data-num="0" src="./hitBadGame/5.png" /></div>
+        <div><span>+100</span><img data-num="1" src="./hitBadGame/6.png" /></div>
+        <div><span>+200</span><img data-num="2" src="./hitBadGame/7.png" /></div>
+        <div><span>+100</span><img data-num="1" src="./hitBadGame/6.png" /></div>
+        <div><span>-100</span><img data-num="0" src="./hitBadGame/5.png" /></div>
+        <div><span>+100</span><img data-num="1" src="./hitBadGame/6.png" /></div>
+        <div><span>+100</span><img data-num="1" src="./hitBadGame/6.png" /></div>
+        <div><span>+100</span><img data-num="1" src="./hitBadGame/6.png" /></div>
+        <div><span>+200</span><img data-num="2" src="./hitBadGame/7.png" /></div>
+    </div>
+    <!--打击效果-->
+    <div class="hitDuang">
+        <img class="duangbg" src="./hitBadGame/Duang.png" />
+        <img class="hitbg" src="./hitBadGame/hit.png" />
+    </div>
+    <!--显示玩家头像名字和分数-->
+    <header>
+        <div class="player-red">
+            <img src="./hitBadGame/loding.png">
+            <span class="playerName"></span>
+            <span class="playerNum">分数：<span>0</span></span>
+        </div>
+        <div class="vsbg"><img src="./hitBadGame/pk.png" /></div>
+        <div class="player-blue">
+            <img src="./hitBadGame/loding.png">
+            <span class="playerName"></span>
+            <span class="playerNum">分数：<span>0</span></span>
+        </div>
+    </header>
+</div>
+<!--游戏计时-->
+<footer>60</footer>
+<!--<script src="../lib/jquery/dist/jquery.min.js"></script>-->
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="./hitBadGame.js"></script>
+</body>
+</html>
