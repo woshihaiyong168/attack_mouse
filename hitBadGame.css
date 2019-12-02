@@ -221,7 +221,8 @@ header{
     width: 100%;
 }
 .player-red,.player-blue{
-    width: 2.2rem;
+    /*width: 2.2rem;*/
+    width: 5.2rem;
 }
 .playerName{
     display: block;
@@ -328,47 +329,47 @@ header{
 }
 .bad div:nth-child(1){
     position: absolute;
-    top: 3.1rem;
-    left: 2.54rem;
+    top: 8.1rem;
+    left: 4.2rem;
 }
 .bad div:nth-child(2){
     position: absolute;
-    top: 5rem;
+    top: 10rem;
     right: .64rem;
 }
 .bad div:nth-child(3){
     position: absolute;
-    top: 4.5rem;
+    top: 9.5rem;
     left: .74rem;
 }
 .bad div:nth-child(4){
     position: absolute;
-    top: 5.6rem;
-    left: 3rem;
+    top: 10.6rem;
+    left: 4.2rem;
 }
 .bad div:nth-child(5){
     position: absolute;
-    top: 7.1rem;
+    top: 12.1rem;
     left: .74rem;
 }
 .bad div:nth-child(6){
     position: absolute;
-    top: 7rem;
+    top: 12rem;
     right: .66rem;
 }
 .bad div:nth-child(7){
     position: absolute;
-    top: 8.3rem;
-    left: 3rem;
+    top: 13.3rem;
+    left: 4.2rem;
 }
 .bad div:nth-child(8){
     position: absolute;
-    top: 9.7rem;
+    top: 14.7rem;
     left: .74rem;
 }
 .bad div:nth-child(9){
     position: absolute;
-    top: 10rem;
+    top: 15rem;
     right: 1rem;
 }
 footer{

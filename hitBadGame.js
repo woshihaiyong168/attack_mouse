@@ -333,7 +333,6 @@ ws.onclose = function() {
     //alert('连接已关闭...');
 };
 
-
 //点击用户头像跳转到对应用户id的个人信息页
 /*$('.blinkBtn').on('touchstart',function (){
  var num = $(this).parent().find('h6').text();
