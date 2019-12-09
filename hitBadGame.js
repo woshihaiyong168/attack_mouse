@@ -114,13 +114,16 @@ function clickNumUp() {
     },300);
 }
 
+//https://developer.mozilla.org/zh-CN/docs/Web/API/WebSocket/send
+
 //匹配同步
-var ws = new WebSocket("ws://182.61.1.27:2555");
+var ws = new WebSocket("ws://182.61.1.27:2555"); //WebSocket()构造函器会返回一个 WebSocket 对象。
 //var ws = new WebSocket("ws://127.0.0.1:2555");
 //监听窗口关闭事件，当窗口关闭时，主动去关闭websocket连接，防止连接还没断开就关闭窗口，server端会抛异常。
 /*window.onblur = function () {
     ws.close();
 }*/
+//页面关闭后触发
 window.onbeforeunload = function () {
     //alert('链接已断开');
     ws.close();
@@ -134,6 +137,7 @@ window.addEventListener('popstate',function (e) {
     ws.close();
 },false);
 
+//WebSocket.onopen属性定义一个事件处理程序，当WebSocket 的连接状态readyState 变为“OPEN”时调用;这意味着当前连接已经准备好发送和接受数据。这个事件处理程序通过 事件（建立连接时）触发。
 ws.onopen = function(){
     console.log("握手成功");
     //点击取消关闭连接
@@ -147,7 +151,10 @@ ws.onopen = function(){
         history.go(-1);
     });
 };
+
+//WebSocket.onmessage 属性是一个当收到来自服务器的消息时被调用的。
 ws.onmessage = function(e){
+
     //console.log(e.data);
     //从url截取用户id
     var str = window.location.href;
@@ -157,9 +164,12 @@ ws.onmessage = function(e){
     var _type = data.code;
     var _data = data.data;
     //console.log(_data)
+
+    //['code'=>1,'msg'=>'匹配成功！','data'=>['room'=>$room,'troops'=>0]]
     if(_type == 1){
         _room = _data.room;
         _troops = _data.troops;
+        //WebSocket.send() 方法将需要通过 WebSocket 链接传输至服务器的数据排入队列，并根据所需要传输的data bytes的大小来增加 bufferedAmount的值 。若数据无法传输（例如数据需要缓存而缓冲区已满）时，套接字会自行关闭。
         ws.send('2,' + _data.room + ',' + playid + ',' + _data.troops);
         $('.gameMark').hide();
         onTime();
@@ -279,6 +289,8 @@ ws.onmessage = function(e){
             ws.send('3,' + _data.room + ',' + pointNum + ',' + _data.troops);
         });
     }
+
+    //渲染用户数据['code'=>2,'msg'=>'用户信息','data'=>$userInfo]
     if(_type == 2){
         if(_data.troops == 0){
             $('.over-player1 .playUid').text(_data.uid);
@@ -305,6 +317,8 @@ ws.onmessage = function(e){
             }
         }
     }
+
+    //['code'=>3,'data'=>['grade'=>$tmp[2],'troops'=>$troops]
     if (_type == 3) {
         if (_data.troops == 0) {
             $('.player-red .playerNum span').text(_data.grade);
@@ -314,6 +328,7 @@ ws.onmessage = function(e){
             $('.over-player2 p span').text(_data.grade);
         }
     }
+    //['code' => 4, 'data' => ['troops' => 1]
     if (_type == 4) {
         if (_data.troops == _troops) {
             $('.game-winAndfall').show();
@@ -326,6 +341,8 @@ ws.onmessage = function(e){
         ws.close();
     }
 };
+
+//WebSocket.close() 方法关闭 WebSocket
 ws.onclose = function() {
     // 关闭 websocket
     //ws.close();
